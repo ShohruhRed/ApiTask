@@ -15,9 +15,14 @@ namespace API.Controllers
             _userService = userService;
         }
         [HttpGet]
-        public async Task<List<User>> GetUsersList()
+        [Route("GetUsers")]
+        public async Task<List<User>> GetUsersList(int from, int to)
         {
-            return await _userService.GetUsers();
+            if (from != 0 && to != 0)
+                return await _userService.GetPart(from, to);
+
+
+            return await _userService.GetAllUsers();
         }
     }
 }

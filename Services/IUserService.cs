@@ -2,6 +2,7 @@
 {
     public interface IUserService
     {
-        Task<List<User>> GetUsers();
+        Task<List<User>> GetAllUsers();
+        Task<List<User>> GetPart(int from, int to);
     }
 }
