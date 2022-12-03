@@ -18,7 +18,7 @@ namespace API.Controllers
         [Route("GetUsers")]
         public async Task<List<User>> GetUsersList(int from, int to)
         {
-            if (from != 0 && to != 0)
+            if (from != 0 && to != 0 && from > 0 && to > 0)
                 return await _userService.GetPart(from, to);
 
 
