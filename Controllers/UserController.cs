@@ -22,6 +22,7 @@ namespace API.Controllers
                 return await _userService.GetPart(from, to);
 
 
+            /* if one of the fields is zero, return all users */
             return await _userService.GetAllUsers();
         }
     }

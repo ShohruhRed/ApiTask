@@ -29,6 +29,8 @@ namespace API.Services
                 var sortedUsers = data.Where(id => id.Id <= from && id.Id >= to).OrderByDescending(o => o.Id).ToList();
                 return sortedUsers;
             }
+            
+            /* if FROM and TO are equal return one user */
 
             var user = data.Where(id => id.Id == from).ToList();
 
